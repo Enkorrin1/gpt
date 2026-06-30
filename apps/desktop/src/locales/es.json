@@ -1,0 +1,145 @@
+{
+  "actions": {
+    "createPr": "Crear PR",
+    "run": "Ejecutar",
+    "stop": "Detener"
+  },
+  "app": {
+    "subtitle": "Panel local de programación con IA"
+  },
+  "approval": {
+    "approve": "Aprobar",
+    "running": "Ejecutando"
+  },
+  "chrome": {
+    "branch": "Rama",
+    "repository": "Repositorio"
+  },
+  "commit": {
+    "body": "Cuerpo",
+    "bodyPlaceholder": "Describe el cambio, la verificación y el contexto...",
+    "cancel": "Cancelar",
+    "commitChanges": "Hacer commit",
+    "commitFailed": "No se pudo hacer commit de los cambios revisados.",
+    "commitLocked": "Commit bloqueado",
+    "committed": "Commit creado",
+    "committedHint": "Los cambios revisados ya están en un commit y listos para el paso de PR.",
+    "committedSha": "Commit {{sha}}",
+    "committing": "Haciendo commit",
+    "confirmCommit": "Hacer commit",
+    "confirmDescription": "Esto añadirá al índice y hará commit de {{count}} archivos revisados en el repositorio activo.",
+    "confirmTitle": "Hacer commit de cambios revisados",
+    "draft": "Borrador",
+    "readyHint": "El borrador está listo para el paso de commit con aprobación explícita.",
+    "reviewHint": "Aprueba el resultado de la tarea antes de hacer commit de estos cambios.",
+    "saveDraft": "Guardar borrador",
+    "saveFailed": "No se pudo guardar el borrador del commit.",
+    "saved": "Guardado",
+    "savedAt": "Borrador del commit guardado.",
+    "saving": "Guardando",
+    "subject": "Asunto",
+    "subjectPlaceholder": "Asunto breve del commit",
+    "subjectRequired": "El asunto del commit es obligatorio.",
+    "subtitle": "Mensaje editable para el futuro paso de commit",
+    "title": "Vista previa del commit"
+  },
+  "composer": {
+    "askPlaceholder": "Pregunta al agente lo que quieras...",
+    "label": "Tarea para el agente",
+    "placeholder": "Implementa el siguiente corte del MVP y mantén los cambios acotados."
+  },
+  "diff": {
+    "binary": "La vista previa de diff binario no está disponible.",
+    "changes": "Cambios ({{count}} archivos)",
+    "empty": "Este archivo no tiene contenido de diff.",
+    "loadFailed": "No se pudo cargar el diff del archivo.",
+    "loading": "Cargando diff...",
+    "preview": "Vista previa del diff",
+    "summary": "Pendiente de revisión",
+    "title": "Diff",
+    "truncated": "La vista previa del diff está truncada."
+  },
+  "feed": {
+    "browserFallback": "El puente de escritorio no está disponible en el modo de vista previa del navegador.",
+    "clear": "Limpiar",
+    "live": "Live",
+    "noEvents": "Esta tarea aún no tiene eventos de ejecución.",
+    "startFailed": "No se pudo iniciar la ejecución del agente.",
+    "title": "Ejecución"
+  },
+  "github": {
+    "allChecksPassed": "Todas las verificaciones pasaron",
+    "branch": "Rama",
+    "checksPassing": "Verificaciones correctas",
+    "details": "Detalles",
+    "lastFetched": "Actualizado hace un momento",
+    "noConflicts": "Esta rama no tiene conflictos con main",
+    "prReady": "El draft PR está listo para abrirse.",
+    "refresh": "Actualizar"
+  },
+  "i18n": {
+    "coverage": "Puerta de localización: ru/en/es/pt-BR"
+  },
+  "projects": {
+    "add": "Agregar proyecto",
+    "emptyDescription": "Selecciona repositorios locales para mantener sus tareas lado a lado.",
+    "emptyTitle": "Aún no hay proyectos",
+    "noTasks": "Aún no hay tareas",
+    "showMore": "Mostrar {{count}} más",
+    "title": "Proyectos"
+  },
+  "repo": {
+    "connectedTo": "Conectado a",
+    "notGit": "No es un repositorio Git",
+    "select": "Seleccionar repositorio"
+  },
+  "review": {
+    "allReviewed": "Todos los archivos revisados",
+    "approveBlocked": "Revisa cada archivo modificado antes de aprobar esta tarea.",
+    "approveFailed": "No se pudo aprobar el resultado de la tarea.",
+    "approveResult": "Aprobar resultado",
+    "approving": "Aprobando",
+    "markReviewed": "Marcar revisado",
+    "markUnreviewed": "Quitar revisión",
+    "needsReview": "Archivos por revisar",
+    "progress": "{{reviewed}}/{{total}} archivos revisados",
+    "reviewed": "Revisado",
+    "unreviewed": "Sin revisar",
+    "updateFailed": "No se pudo actualizar el estado de revisión del archivo."
+  },
+  "settings": {
+    "title": "Ajustes"
+  },
+  "status": {
+    "blocked": "Bloqueadas",
+    "running": "En ejecución"
+  },
+  "tasks": {
+    "completed": "Completadas",
+    "defaultDescription": "Preparar el runtime local del agente y verificar el primer flujo de escritorio.",
+    "defaultTitle": "Revisar el bootstrap local del agente",
+    "filter": "Filtrar tareas",
+    "inProgress": "En progreso",
+    "new": "Nueva tarea",
+    "pending": "Pendientes",
+    "search": "Buscar tareas",
+    "searchPlaceholder": "Buscar tareas...",
+    "status": {
+      "done": "Completada",
+      "failed": "Fallida",
+      "queued": "Pendiente",
+      "review": "Lista para revisión",
+      "running": "En progreso"
+    },
+    "title": "Tareas"
+  },
+  "time": {
+    "daysShort": "{{count}}d",
+    "hoursShort": "{{count}}h",
+    "minutesShort": "{{count}}m"
+  },
+  "workspace": {
+    "eyeline": "Espacio de trabajo",
+    "model": "Modelo"
+  }
+}

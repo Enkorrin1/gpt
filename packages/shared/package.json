@@ -1,0 +1,17 @@
+{
+  "name": "@ai-dev/shared",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/events.js",
+  "types": "dist/events.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vitest": "^4.1.9"
+  }
+}

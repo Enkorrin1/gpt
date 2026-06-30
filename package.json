@@ -1,0 +1,22 @@
+{
+  "name": "ai-developer-desktop",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm --workspace packages/shared run build && npm --workspace apps/desktop run dev",
+    "build": "npm --workspace packages/shared run build && npm --workspace apps/desktop run build",
+    "package": "npm --workspace apps/desktop run package",
+    "typecheck": "npm --workspace packages/shared run build && npm --workspace apps/desktop run typecheck",
+    "test": "npm --workspace packages/shared run test && npm --workspace apps/desktop run test",
+    "i18n:check": "node scripts/check_i18n.mjs"
+  },
+  "engines": {
+    "node": ">=20.11.0",
+    "npm": ">=10.0.0"
+  }
+}

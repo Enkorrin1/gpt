@@ -1,0 +1,145 @@
+{
+  "actions": {
+    "createPr": "Создать PR",
+    "run": "Запустить",
+    "stop": "Остановить"
+  },
+  "app": {
+    "subtitle": "Локальный AI coding cockpit"
+  },
+  "approval": {
+    "approve": "Разрешить",
+    "running": "В работе"
+  },
+  "chrome": {
+    "branch": "Ветка",
+    "repository": "Репозиторий"
+  },
+  "commit": {
+    "body": "Описание",
+    "bodyPlaceholder": "Опишите изменение, проверки и контекст...",
+    "cancel": "Отмена",
+    "commitChanges": "Сделать commit",
+    "commitFailed": "Не удалось сделать commit проверенных изменений.",
+    "commitLocked": "Commit заблокирован",
+    "committed": "Commit создан",
+    "committedHint": "Проверенные изменения уже в commit и готовы к шагу PR.",
+    "committedSha": "Commit {{sha}}",
+    "committing": "Commit выполняется",
+    "confirmCommit": "Сделать commit",
+    "confirmDescription": "Будут staged и committed {{count}} проверенных файлов в активном репозитории.",
+    "confirmTitle": "Commit проверенных изменений",
+    "draft": "Черновик",
+    "readyHint": "Черновик готов для следующего шага с явным подтверждением commit.",
+    "reviewHint": "Подтвердите результат задачи перед commit этих изменений.",
+    "saveDraft": "Сохранить",
+    "saveFailed": "Не удалось сохранить черновик commit.",
+    "saved": "Сохранено",
+    "savedAt": "Черновик commit сохранен.",
+    "saving": "Сохранение",
+    "subject": "Заголовок",
+    "subjectPlaceholder": "Короткий заголовок commit",
+    "subjectRequired": "Нужен заголовок commit.",
+    "subtitle": "Редактируемое сообщение для будущего commit",
+    "title": "Commit Preview"
+  },
+  "composer": {
+    "askPlaceholder": "Спросите агента о чем угодно...",
+    "label": "Задача для агента",
+    "placeholder": "Реализуй следующий MVP-срез и держи изменения в рамках задачи."
+  },
+  "diff": {
+    "binary": "Предпросмотр binary diff недоступен.",
+    "changes": "Изменения ({{count}} файлов)",
+    "empty": "Для этого файла нет diff-содержимого.",
+    "loadFailed": "Не удалось загрузить diff файла.",
+    "loading": "Загрузка diff...",
+    "preview": "Предпросмотр diff",
+    "summary": "Ожидает ревью",
+    "title": "Diff",
+    "truncated": "Предпросмотр diff обрезан."
+  },
+  "feed": {
+    "browserFallback": "Desktop bridge недоступен в browser preview режиме.",
+    "clear": "Очистить",
+    "live": "Live",
+    "noEvents": "У этой задачи пока нет событий выполнения.",
+    "startFailed": "Не удалось запустить агента.",
+    "title": "Execution"
+  },
+  "github": {
+    "allChecksPassed": "Все проверки прошли",
+    "branch": "Ветка",
+    "checksPassing": "Проверки пройдены",
+    "details": "Детали",
+    "lastFetched": "Обновлено только что",
+    "noConflicts": "У этой ветки нет конфликтов с main",
+    "prReady": "Draft PR готов к открытию.",
+    "refresh": "Обновить"
+  },
+  "i18n": {
+    "coverage": "Локализация: ru/en/es/pt-BR"
+  },
+  "projects": {
+    "add": "Добавить проект",
+    "emptyDescription": "Выберите локальные репозитории, чтобы держать их задачи рядом.",
+    "emptyTitle": "Проектов пока нет",
+    "noTasks": "Задач пока нет",
+    "showMore": "Показать еще {{count}}",
+    "title": "Проекты"
+  },
+  "repo": {
+    "connectedTo": "Подключено к",
+    "notGit": "Это не Git-репозиторий",
+    "select": "Выбрать репозиторий"
+  },
+  "review": {
+    "allReviewed": "Все файлы проверены",
+    "approveBlocked": "Проверьте каждый измененный файл перед подтверждением задачи.",
+    "approveFailed": "Не удалось подтвердить результат задачи.",
+    "approveResult": "Подтвердить результат",
+    "approving": "Подтверждение",
+    "markReviewed": "Отметить проверенным",
+    "markUnreviewed": "Снять отметку",
+    "needsReview": "Файлы ждут проверки",
+    "progress": "{{reviewed}}/{{total}} файлов проверено",
+    "reviewed": "Проверено",
+    "unreviewed": "Не проверено",
+    "updateFailed": "Не удалось обновить статус проверки файла."
+  },
+  "settings": {
+    "title": "Настройки"
+  },
+  "status": {
+    "blocked": "Заблокировано",
+    "running": "В работе"
+  },
+  "tasks": {
+    "completed": "Завершено",
+    "defaultDescription": "Подготовить локальный runtime агента и проверить первый desktop workflow.",
+    "defaultTitle": "Проверить локальный bootstrap агента",
+    "filter": "Фильтр задач",
+    "inProgress": "В работе",
+    "new": "Новая задача",
+    "pending": "Ожидает",
+    "search": "Поиск задач",
+    "searchPlaceholder": "Искать задачи...",
+    "status": {
+      "done": "Завершено",
+      "failed": "Ошибка",
+      "queued": "Ожидает",
+      "review": "Готово к ревью",
+      "running": "В работе"
+    },
+    "title": "Задачи"
+  },
+  "time": {
+    "daysShort": "{{count}}д",
+    "hoursShort": "{{count}}ч",
+    "minutesShort": "{{count}}м"
+  },
+  "workspace": {
+    "eyeline": "Рабочая область",
+    "model": "Модель"
+  }
+}

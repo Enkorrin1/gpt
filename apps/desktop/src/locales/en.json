@@ -1,0 +1,145 @@
+{
+  "actions": {
+    "createPr": "Create PR",
+    "run": "Run",
+    "stop": "Stop"
+  },
+  "app": {
+    "subtitle": "Local AI coding cockpit"
+  },
+  "approval": {
+    "approve": "Approve",
+    "running": "Running"
+  },
+  "chrome": {
+    "branch": "Branch",
+    "repository": "Repository"
+  },
+  "commit": {
+    "body": "Body",
+    "bodyPlaceholder": "Describe the change, verification, and context...",
+    "cancel": "Cancel",
+    "commitChanges": "Commit Changes",
+    "commitFailed": "Could not commit reviewed changes.",
+    "commitLocked": "Commit locked",
+    "committed": "Committed",
+    "committedHint": "These reviewed changes are now committed and ready for the PR step.",
+    "committedSha": "Committed {{sha}}",
+    "committing": "Committing",
+    "confirmCommit": "Commit",
+    "confirmDescription": "This will stage and commit {{count}} reviewed files in the active repository.",
+    "confirmTitle": "Commit reviewed changes",
+    "draft": "Draft",
+    "readyHint": "Draft is ready for the explicit commit approval step.",
+    "reviewHint": "Approve the task result before committing these changes.",
+    "saveDraft": "Save Draft",
+    "saveFailed": "Could not save commit draft.",
+    "saved": "Saved",
+    "savedAt": "Commit draft saved.",
+    "saving": "Saving",
+    "subject": "Subject",
+    "subjectPlaceholder": "Short commit subject",
+    "subjectRequired": "Commit subject is required.",
+    "subtitle": "Editable message for the future commit step",
+    "title": "Commit Preview"
+  },
+  "composer": {
+    "askPlaceholder": "Ask the agent anything...",
+    "label": "Task prompt",
+    "placeholder": "Implement the next MVP slice and keep changes scoped."
+  },
+  "diff": {
+    "binary": "Binary diff preview is not available.",
+    "changes": "Changes ({{count}} files)",
+    "empty": "No diff content for this file.",
+    "loadFailed": "Could not load file diff.",
+    "loading": "Loading diff...",
+    "preview": "Diff preview",
+    "summary": "Pending review",
+    "title": "Diff",
+    "truncated": "Diff preview is truncated."
+  },
+  "feed": {
+    "browserFallback": "Desktop bridge is not available in browser preview mode.",
+    "clear": "Clear",
+    "live": "Live",
+    "noEvents": "No execution events for this task yet.",
+    "startFailed": "Could not start the agent run.",
+    "title": "Execution"
+  },
+  "github": {
+    "allChecksPassed": "All checks have passed",
+    "branch": "Branch",
+    "checksPassing": "Checks passing",
+    "details": "Details",
+    "lastFetched": "Last fetched just now",
+    "noConflicts": "This branch has no conflicts with main",
+    "prReady": "Draft PR is ready to open.",
+    "refresh": "Refresh"
+  },
+  "i18n": {
+    "coverage": "Localization gate: ru/en/es/pt-BR"
+  },
+  "projects": {
+    "add": "Add Project",
+    "emptyDescription": "Select local repositories to keep their tasks side by side.",
+    "emptyTitle": "No projects yet",
+    "noTasks": "No tasks yet",
+    "showMore": "Show {{count}} more",
+    "title": "Projects"
+  },
+  "repo": {
+    "connectedTo": "Connected to",
+    "notGit": "Not a Git repository",
+    "select": "Select repository"
+  },
+  "review": {
+    "allReviewed": "All files reviewed",
+    "approveBlocked": "Review every changed file before approving this task.",
+    "approveFailed": "Could not approve the task result.",
+    "approveResult": "Approve Result",
+    "approving": "Approving",
+    "markReviewed": "Mark reviewed",
+    "markUnreviewed": "Mark unreviewed",
+    "needsReview": "Files need review",
+    "progress": "{{reviewed}}/{{total}} files reviewed",
+    "reviewed": "Reviewed",
+    "unreviewed": "Unreviewed",
+    "updateFailed": "Could not update file review status."
+  },
+  "settings": {
+    "title": "Settings"
+  },
+  "status": {
+    "blocked": "Blocked",
+    "running": "Running"
+  },
+  "tasks": {
+    "completed": "Completed",
+    "defaultDescription": "Prepare the local agent runtime and verify the first desktop workflow.",
+    "defaultTitle": "Review local agent bootstrap",
+    "filter": "Filter tasks",
+    "inProgress": "In Progress",
+    "new": "New Task",
+    "pending": "Pending",
+    "search": "Search tasks",
+    "searchPlaceholder": "Search tasks...",
+    "status": {
+      "done": "Completed",
+      "failed": "Failed",
+      "queued": "Pending",
+      "review": "Ready for review",
+      "running": "In Progress"
+    },
+    "title": "Tasks"
+  },
+  "time": {
+    "daysShort": "{{count}}d",
+    "hoursShort": "{{count}}h",
+    "minutesShort": "{{count}}m"
+  },
+  "workspace": {
+    "eyeline": "Workspace",
+    "model": "Model"
+  }
+}
