@@ -42,6 +42,8 @@ import type {
   FileReviewStatus,
   GitDiffLine,
   GitFileDiff,
+  GitHubPullRequestReadiness,
+  GitHubPullRequestRecord,
   GitStatusSummary,
   ProjectRecord,
   TaskRecord
@@ -523,19 +525,22 @@ export function App() {
   const [fileReviews, setFileReviews] = useState<FileReviewRecord[]>([]);
   const [commitDraft, setCommitDraft] = useState<CommitDraftRecord | undefined>();
   const [taskCommit, setTaskCommit] = useState<CommitTaskResult | undefined>();
+  const [pullRequestReadiness, setPullRequestReadiness] = useState<GitHubPullRequestReadiness | undefined>();
+  const [pullRequest, setPullRequest] = useState<GitHubPullRequestRecord | undefined>();
   const [commitSubject, setCommitSubject] = useState("");
   const [commitBody, setCommitBody] = useState("");
   const [isCommitDraftSaving, setIsCommitDraftSaving] = useState(false);
   const [isCommittingTask, setIsCommittingTask] = useState(false);
+  const [isCreatingPullRequest, setIsCreatingPullRequest] = useState(false);
   const [commitDraftError, setCommitDraftError] = useState<string | undefined>();
   const [commitTaskError, setCommitTaskError] = useState<string | undefined>();
+  const [pullRequestError, setPullRequestError] = useState<string | undefined>();
   const [commitDraftSavedAt, setCommitDraftSavedAt] = useState<string | undefined>();
   const [showCommitDialog, setShowCommitDialog] = useState(false);
   const [isDiffLoading, setIsDiffLoading] = useState(false);
   const [isApprovingResult, setIsApprovingResult] = useState(false);
   const [resultApprovalError, setResultApprovalError] = useState<string | undefined>();
   const [showSearch, setShowSearch] = useState(false);
-  const [prStatus, setPrStatus] = useState<"idle" | "created">("idle");
 
   const loadRuns = useCallback(async (taskId = activeTaskId) => {
     if (!window.desktop || !taskId) {
@@ -585,6 +590,23 @@ export function App() {
     const result = await window.desktop.getTaskCommit(taskId);
     setTaskCommit(result ?? undefined);
     setCommitTaskError(undefined);
+  }, []);
+
+  const loadPullRequestContext = useCallback(async (taskId?: string) => {
+    if (!window.desktop || !taskId) {
+      setPullRequestReadiness(undefined);
+      setPullRequest(undefined);
+      setPullRequestError(undefined);
+      return;
+    }
+
+    const [readiness, existingPullRequest] = await Promise.all([
+      window.desktop.getPullRequestReadiness(taskId),
+      window.desktop.getPullRequest(taskId)
+    ]);
+    setPullRequestReadiness(readiness);
+    setPullRequest(existingPullRequest ?? undefined);
+    setPullRequestError(undefined);
   }, []);
 
   const loadProjects = useCallback(async () => {
@@ -657,13 +679,14 @@ export function App() {
       void loadProjects();
       void loadRuns();
       void loadFileReviews(gitStatus?.isGitRepo ? gitStatus.rootPath : undefined);
+      void loadPullRequestContext(activeTaskId);
     });
 
     return () => {
       offAgentEvent();
       offTasksChanged();
     };
-  }, [gitStatus?.isGitRepo, gitStatus?.rootPath, loadFileReviews, loadProjects, loadRuns, loadTasks]);
+  }, [activeTaskId, gitStatus?.isGitRepo, gitStatus?.rootPath, loadFileReviews, loadProjects, loadPullRequestContext, loadRuns, loadTasks]);
 
   useEffect(() => {
     void loadRuns();
@@ -680,7 +703,8 @@ export function App() {
   useEffect(() => {
     void loadCommitDraft(activeTask?.id);
     void loadTaskCommit(activeTask?.id);
-  }, [activeTask?.id, loadCommitDraft, loadTaskCommit]);
+    void loadPullRequestContext(activeTask?.id);
+  }, [activeTask?.id, loadCommitDraft, loadPullRequestContext, loadTaskCommit]);
 
   const storedRunEvents = useMemo(() => runs.flatMap((run) => run.events), [runs]);
   const activeRunEvents = useMemo(() => {
@@ -734,7 +758,16 @@ export function App() {
       !taskCommit &&
       !isCommittingTask
   );
-  const canCreatePr = Boolean(activeTask?.status === "done" && isCommitDraftSaved && taskCommit);
+  const canCreatePr = Boolean(pullRequestReadiness?.isReady && !pullRequest && !isCreatingPullRequest);
+  const githubRepositoryLabel =
+    pullRequestReadiness?.owner && pullRequestReadiness.repo
+      ? `${pullRequestReadiness.owner}/${pullRequestReadiness.repo}`
+      : t("github.remoteMissing");
+  const githubTargetLabel =
+    pullRequestReadiness?.headBranch && pullRequestReadiness.baseBranch
+      ? `${pullRequestReadiness.headBranch} -> ${pullRequestReadiness.baseBranch}`
+      : branchLabel;
+  const pullRequestBlockers = pullRequestReadiness?.blockers ?? [];
   const displayedDiffLines = gitStatus?.isGitRepo ? fileDiff?.lines ?? [] : fallbackDiffLines();
   const aheadBehindLabel = gitStatus?.isGitRepo
     ? `${gitStatus.ahead} commits ahead, ${gitStatus.behind} behind`
